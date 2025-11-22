@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+#set -e
 
 # Set the container_id
 container_id=`docker ps -q -f name=flask-app`
