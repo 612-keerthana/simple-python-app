@@ -10,6 +10,6 @@ if [ -z "$container_id" ]; then
   exit 0
 else
   echo "Stopping and removing container: $container_id"
-  docker rm -f "$container_id "
+  docker rm -f "$container_id"
 fi
 
