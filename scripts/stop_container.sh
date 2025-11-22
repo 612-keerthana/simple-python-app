@@ -2,7 +2,7 @@
 #set -e
 
 # Set the container_id
-container_id=$(docker ps -q -f name=python-flask-app | tr -d '[:space:]')
+container_id=$(docker ps -q -f name=python-flask-app)
 
 # Stop any running container
 if [ -z "$container_id" ]; then
@@ -10,6 +10,6 @@ if [ -z "$container_id" ]; then
   exit 0
 else
   echo "Stopping and removing container: $container_id"
-  docker rm -f $container_id 
+  docker rm -f "$container_id "
 fi
 
