@@ -2,7 +2,13 @@
 set -e
 
 # Set the container_id
-container_id=`docker ps -q`
+container_id=`docker ps -q -f name=flask-app`
 
 # Stop any running container
-docker rm -f $container_id
+if [ -z "$container_id" ]; then
+  echo "No running container found."
+else
+  echo "Stopping and removing container: $container_id"
+  docker rm -f $container_id 
+fi
+
